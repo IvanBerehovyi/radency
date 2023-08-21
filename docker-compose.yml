@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ocr-module:
+    build: .
+    depends_on:
+      - rabbitmq
+  rabbitmq:
+    image: "rabbitmq:management"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
